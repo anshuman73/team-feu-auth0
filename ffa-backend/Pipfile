@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-pymongo = "*"
+azure-cognitiveservices-vision-face = "*"
 
 [requires]
 python_version = "3.8"
