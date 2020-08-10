@@ -24,7 +24,7 @@ def register_face():
     user_email = request.args.get('email')
     username = request.args.get('username')
     image = request.files['webcam']
-    utils.register_face([image.read()], 'auth0-demo-trial', username)
+    utils.register_face([image.read()], 'auth0-demo', username)
     return 'OK'
 
 
@@ -41,7 +41,7 @@ def verify_face():
     user_email = request.args.get('email')
     username = request.args.get('username')
     image = request.files['webcam']
-    person = utils.find_person(image.read(), 'auth0-demo-trial')
+    person = utils.find_person(image.read(), 'auth0-demo')
     if person == username:
         return 'OK'
     return 'NOT OK'

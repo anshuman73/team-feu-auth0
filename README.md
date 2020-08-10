@@ -13,6 +13,14 @@ Built by:
 * Anshuman Agarwal
 * Gazal Gupta
 
+Detailed README is hosted at [ffa-backend/README.md](ffa-backend/README.md) , the main backend powering our product.
+
+
 Submission link:
 
 https://devpost.com/software/facepass-abh1zy
+
+
+Video link:
+
+https://www.youtube.com/watch?v=rtsuYPuEPQY
