@@ -18,13 +18,32 @@ def new_registration():
     return render_template('register.html', user_email=user_email, username=username)
 
 
-@app.route('/register-image')
+@app.route('/register-image', methods=['POST'])
 def register_face():
     user_email = request.args.get('email')
     username = request.args.get('username')
-    image = request.files['photo']
-    utils.register_face([image.read()], 'auth0-demo', user_email)
+    image = request.files['webcam']
+    utils.register_face([image.read()], 'auth0-demo-trial', username)
     return 'OK'
+
+
+@app.route('/verify')
+def verify():
+    user_email = request.args.get('email')
+    username = request.args.get('username')
+    state = request.args.get('state')
+    return render_template('verify.html', user_email=user_email, username=username, state=state)
+
+
+@app.route('/verify-image', methods=['POST'])
+def verify_face():
+    user_email = request.args.get('email')
+    username = request.args.get('username')
+    image = request.files['webcam']
+    person = utils.register_face([image.read()], 'auth0-demo-trial')
+    if person == username:
+        return 'OK'
+    return 'NOT OK'
 
 
 @app.route('/send-email')
@@ -39,4 +58,5 @@ def send_email():
 def registration_done():
     return render_template('thanks.html')
 
-app.run()
+
+app.run(debug=False)
