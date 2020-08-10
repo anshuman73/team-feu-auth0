@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 flask-pymongo = "*"
 azure-cognitiveservices-vision-face = "*"
+sendgrid = "*"
 
 [requires]
 python_version = "3.8"

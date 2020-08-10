@@ -14,7 +14,7 @@ We currently work on top of Auth0's authentication to get started in within minu
 Currently, the process is simple as these 3 steps for a developer - 
 
 
-1. Sign up on our platform
+1. Sign up on Auth0 and setup their app
 2. Copy paste a custom hook on their Auth0 project
 3. Copy paste a custom rule on their Auth0 project
 
@@ -34,4 +34,6 @@ This is built upon the following technologies / frameworks -
 ## How to run it
 
 * Rename .env-sample to .env and add all API credentials
+* Setup MongoDB on your system
+* Install the dependencies
 * Simply run ```python3 app.py``` !
