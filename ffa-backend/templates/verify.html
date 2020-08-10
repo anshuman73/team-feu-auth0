@@ -106,6 +106,9 @@
                             if (text == 'OK' && code == 200) {
                                 window.location = 'https://dev-afg9s90u.us.auth0.com/continue?state={{ state }}'
                             }
+                            else {
+                                window.location = '/false-verify'
+                            }
                         });
 
                     });

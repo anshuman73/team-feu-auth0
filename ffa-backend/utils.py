@@ -21,7 +21,6 @@ assert face_api_key
 face_api_endpoint = os.environ.get('AZURE_ENDPOINT', None)
 assert face_api_endpoint
 
-print(face_api_endpoint, face_api_key)
 
 credentials = CognitiveServicesCredentials(face_api_key)
 face_client = FaceClient(face_api_endpoint, credentials=credentials)
@@ -67,7 +66,7 @@ def register_face(images, person_group_id, person_id):
 
 
 def send_email(user_email, username):
-    url = f'{os.environ.get("BASE_URL")}/register?username=username&user_email=user_email'
+    url = f'http://localhost:5000/register?username={username}&email={user_email}'
     message = Mail(
         from_email='auth0demo.teamfeu@gmail.com',
         to_emails=user_email,
